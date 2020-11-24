@@ -6,6 +6,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <optional>
 #include "tinyxml2.h"
 
 //That's the class that stores BOTH grid map data AND start-goal locations.
@@ -17,14 +18,24 @@
 //Think of it as an "independent" piece of data that is managed by outer (non-search related) proccesses.
 //Search algorithm should create it own object/structures needed to run the search on that map.
 
-class Map
-{
-    private:
-        int     height, width;
-        int     start_i, start_j;
-        int     goal_i, goal_j;
-        double  cellSize;
-        int**   Grid;
+
+
+class Point {
+public:
+    Point(int i_, int j_) : i(i_), j(j_) {}
+
+    int i, j;
+};
+
+
+
+class Map {
+private:
+    int height, width;
+    int start_i, start_j;
+    int goal_i, goal_j;
+    double cellSize;
+    int **Grid;
 
     public:
         Map();
@@ -40,6 +51,9 @@ class Map
         int getMapWidth() const;
         double getCellSize() const;
 
+    Point getCoordinatesStart() const;
+
+    Point getCoordinatesGoal() const;
 };
 
 #endif

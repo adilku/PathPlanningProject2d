@@ -338,3 +338,12 @@ double Map::getCellSize() const
 {
       return cellSize;
 }
+
+Point Map::getCoordinatesStart() const {
+    return {start_i, start_j};
+}
+
+Point Map::getCoordinatesGoal() const {
+    return {goal_i, goal_j};
+}
+

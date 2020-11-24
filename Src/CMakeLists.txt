@@ -6,6 +6,7 @@ set(HEADERS         config.h
                     map.h
                     mission.h
                     node.h
+                    Heap.h
                     search.h
                     searchresult.h
                     tinyxml2.h

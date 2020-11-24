@@ -8,6 +8,10 @@
 #include <math.h>
 #include <limits>
 #include <chrono>
+#include <optional>
+#include <set>
+#include <unordered_set>
+#include <map>
 
 class Search
 {
@@ -35,7 +39,18 @@ class Search
 
         SearchResult                    sresult; //This will store the search result
         std::list<Node>                 lppath, hppath; //
-
+        std::list<Node> open;
+        //std::multimap<std::pair<int, int>, std::vector<Node>::iterator> open_map;
+        //Heap open_heap;
+        std::vector<std::vector<Node>> close;
         //CODE HERE to define other members of the class
+        double get_heuristic(Point from, Point to, const EnvironmentOptions &options) const;
+
+
+    std::vector<Node> CheckNeighbours(Node &v, int i, int j, const Map &map, const EnvironmentOptions &options);
+
+    void makePrimaryPath(Node* curNode);
+
+    void makeSecondaryPath();
 };
 #endif
