@@ -23,9 +23,9 @@ double Search::get_heuristic(Point from, Point to, const EnvironmentOptions &opt
 }
 
 
-std::vector<Node> Search::CheckNeighbours(Node &v, int i1, int j1, const Map &map, const EnvironmentOptions &options) {
+std::vector<Node> Search::CheckNeighbours(Node &v, const Map &map, const EnvironmentOptions &options) {
     std::vector<Node> neighbours;
-    for (auto micro_node : non_diag) {
+    for (auto &micro_node : DISALLOW_DIAG_MOVES) {
         int i = micro_node.first;
         int j = micro_node.second;
         if (map.CellOnGrid(v.i + i, v.j + j) && map.CellIsTraversable(v.i + i, v.j + j)) {
@@ -37,9 +37,9 @@ std::vector<Node> Search::CheckNeighbours(Node &v, int i1, int j1, const Map &ma
         }
     }
     if (options.allowdiagonal) {
-        for (auto micro_node : allow_diag) {
-            int i = micro_node.first;
-            int j = micro_node.second;
+        for (auto &cur_point : ALLOW_DIAG_MOVES) {
+            int i = cur_point.first;
+            int j = cur_point.second;
             if (map.CellOnGrid(v.i + i, v.j + j) && map.CellIsTraversable(v.i + i, v.j + j)) {
                 if (options.allowdiagonal) {
                     bool vert = map.CellOnGrid(v.i, v.j + j) && map.CellIsTraversable(v.i, v.j + j);
@@ -59,7 +59,6 @@ std::vector<Node> Search::CheckNeighbours(Node &v, int i1, int j1, const Map &ma
                                                 &v);
                     }
                 }
-
             }
         }
     }
@@ -110,7 +109,7 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
             break;
         }
         open.erase(cur_el);
-        for (auto &neighbour : CheckNeighbours(*cur_v, 1, 1, map, options)) {
+        for (auto &neighbour : CheckNeighbours(*cur_v, map, options)) {
             if (close[neighbour.i][neighbour.j].i == -1) {
                 auto it = std::find_if(open.begin(), open.end(), [neighbour](Node el) {
                     return el.i == neighbour.i && el.j == neighbour.j;

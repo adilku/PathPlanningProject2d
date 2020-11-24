@@ -138,8 +138,8 @@
 
 
 //directions
-#define non_diag std::vector<std::pair<int, int>>{{-1, 0}, {1, 0}, {0, 1}, {0, -1}}
-#define allow_diag std::vector<std::pair<int, int>>{{1, 1}, {1, -1}, {-1, 1}, {-1, -1}}
+#define DISALLOW_DIAG_MOVES std::vector<std::pair<int, int>>{{-1, 0}, {1, 0}, {0, 1}, {0, -1}}
+#define ALLOW_DIAG_MOVES std::vector<std::pair<int, int>>{{1, 1}, {1, -1}, {-1, 1}, {-1, -1}}
 
 
 
