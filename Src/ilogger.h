@@ -2,7 +2,6 @@
 #define	ILOGGER_H
 #include "map.h"
 #include "node.h"
-#include "Heap.h"
 #include <unordered_map>
 #include <list>
 
