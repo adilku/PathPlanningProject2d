@@ -59,7 +59,7 @@
 #define CNS_TAG_ATTR_G              "g"
 #define CNS_TAG_ATTR_PARX           "parent_x"
 #define CNS_TAG_ATTR_PARY           "parent_y"
-#define CNS_TAG_ATTR_STX            "start.x"
+#define CNS_TAG_ATTR_STX            "staztz.x"
 #define CNS_TAG_ATTR_STY            "start.y"
 #define CNS_TAG_ATTR_FINX           "finish.x"
 #define CNS_TAG_ATTR_FINY           "finish.y"
@@ -138,8 +138,8 @@
 
 
 //directions
-#define DISALLOW_DIAG_MOVES std::vector<std::pair<int, int>>{{-1, 0}, {1, 0}, {0, 1}, {0, -1}}
-#define ALLOW_DIAG_MOVES std::vector<std::pair<int, int>>{{1, 1}, {1, -1}, {-1, 1}, {-1, -1}}
+#define DISALLOWED_DIAG_MOVES std::vector<std::pair<int, int>>{{-1, 0}, {1, 0}, {0, 1}, {0, -1}}
+#define ALLOWED_DIAG_MOVES std::vector<std::pair<int, int>>{{1, 1}, {1, -1}, {-1, 1}, {-1, -1}}
 
 
 

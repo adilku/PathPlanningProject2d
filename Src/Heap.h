@@ -37,10 +37,10 @@ public:
             left = 2 * i + 1;
             right = 2 * i + 2;
             small = i;
-            if (right < heap_size() && items[right].F < items[small].F) {
+            if (right < (int)heap_size() && items[right].F < items[small].F) {
                 small = right;
             }
-            if (left < heap_size() && items[left].F < items[small].F) {
+            if (left < (int)heap_size() && items[left].F < items[small].F) {
                 small = left;
             }
             if (small == i) {

@@ -1,4 +1,5 @@
 #include "search.h"
+#include <chrono>
 
 
 Search::Search() {
@@ -25,7 +26,7 @@ double Search::get_heuristic(Point from, Point to, const EnvironmentOptions &opt
 
 std::vector<Node> Search::CheckNeighbours(Node &v, const Map &map, const EnvironmentOptions &options) {
     std::vector<Node> neighbours;
-    for (auto &micro_node : DISALLOW_DIAG_MOVES) {
+    for (auto &micro_node : DISALLOWED_DIAG_MOVES) {
         int i = micro_node.first;
         int j = micro_node.second;
         if (map.CellOnGrid(v.i + i, v.j + j) && map.CellIsTraversable(v.i + i, v.j + j)) {
@@ -37,7 +38,7 @@ std::vector<Node> Search::CheckNeighbours(Node &v, const Map &map, const Environ
         }
     }
     if (options.allowdiagonal) {
-        for (auto &cur_point : ALLOW_DIAG_MOVES) {
+        for (auto &cur_point : ALLOWED_DIAG_MOVES) {
             int i = cur_point.first;
             int j = cur_point.second;
             if (map.CellOnGrid(v.i + i, v.j + j) && map.CellIsTraversable(v.i + i, v.j + j)) {
@@ -77,6 +78,7 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
     sresult.time = ;
     sresult.hppath = &hppath; //Here is a constant pointer
     sresult.lppath = &lppath;*/
+    auto time = std::chrono::steady_clock::now();
 
     Point start = map.getCoordinatesStart();
     Point goal = map.getCoordinatesGoal();
@@ -92,32 +94,36 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
     open.emplace_back(start.i, start.j, 1 * get_heuristic(start, goal, options), 0, get_heuristic(start, goal, options),
                       nullptr
     );
-    /*
-    open_heap.insert(
-            Node(start.i, start.j, 1 * Heuristic(start, goal, options), 0, get_heuristic(start, goal, options), nullptr
+
+    auto temp = open_heap.insert(
+            Node(start.i, start.j, 1 * get_heuristic(start, goal, options), 0, get_heuristic(start, goal, options),
+                 nullptr
             ));
-    */
+
     while (!open.empty()) {
         ++cnt_steps;
-        auto cur_el = std::min_element(open.begin(), open.end());
-        close[cur_el->i][cur_el->j] = *cur_el;
-        int cur_I = cur_el->i;
-        int cur_J = cur_el->j;
+        auto cur_el = *open_heap.begin();
+        open_heap.erase(open_heap.begin());
+        open_map.erase({cur_el.i, cur_el.j});
+        close[cur_el.i][cur_el.j] = cur_el;
+        int cur_I = cur_el.i;
+        int cur_J = cur_el.j;
         auto cur_v = &close[cur_I][cur_J];
         if (cur_v->i == goal.i && cur_v->j == goal.j) {
             searchedGoal = &close[cur_v->i][cur_v->j];
             break;
         }
-        open.erase(cur_el);
         for (auto &neighbour : CheckNeighbours(*cur_v, map, options)) {
             if (close[neighbour.i][neighbour.j].i == -1) {
-                auto it = std::find_if(open.begin(), open.end(), [neighbour](Node el) {
-                    return el.i == neighbour.i && el.j == neighbour.j;
-                });
-                if (it != open.end() && it->g > neighbour.g) {
-                    *it = neighbour;
-                } else if (it == open.end()) {
-                    open.push_back(neighbour);
+                auto it = open_map.find({neighbour.i, neighbour.j});
+                if (it != open_map.end() && it->second->g > neighbour.g) {
+                    open_heap.erase(it->second);
+                    auto new_val = open_heap.insert(neighbour);
+                    open_map.erase(it);
+                    open_map.insert({{neighbour.i, neighbour.j}, new_val});
+                } else if (it == open_map.end()) {
+                    auto temp1 = open_heap.insert(neighbour);
+                    open_map.insert({{neighbour.i, neighbour.j}, temp1});
                 }
             }
         }
@@ -134,7 +140,9 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
         makePrimaryPath(searchedGoal);
         makeSecondaryPath();
     }
-    //sresult.time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - time).count();
+    sresult.time =
+            (double)std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - time).count() /
+            1000;
     sresult.hppath = &hppath;
     sresult.lppath = &lppath;
     return sresult;

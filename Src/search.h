@@ -35,13 +35,19 @@ class Search
         //so think of the data structures that needed to be used, about the wrap-up classes (if needed)
         //Start with very simple (and ineffective) structures like list or vector and make it work first
         //and only then begin enhancement!
+        struct compare {
+            bool operator()(const Node &lhs,
+                            const Node &rhs) const {
+                return lhs.F < rhs.F;
+            }
+        };
 
 
         SearchResult                    sresult; //This will store the search result
         std::list<Node>                 lppath, hppath; //
         std::list<Node> open;
-        //std::multimap<std::pair<int, int>, std::vector<Node>::iterator> open_map;
-        //Heap open_heap;
+        std ::multimap<std::pair<int, int>, std::multiset<Node>::iterator> open_map;
+        std::multiset<Node, compare> open_heap;
         std::vector<std::vector<Node>> close;
         //CODE HERE to define other members of the class
         double get_heuristic(Point from, Point to, const EnvironmentOptions &options) const;
