@@ -78,7 +78,7 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
     sresult.time = ;
     sresult.hppath = &hppath; //Here is a constant pointer
     sresult.lppath = &lppath;*/
-    auto time = std::chrono::steady_clock::now();
+    auto startTime = std::chrono::high_resolution_clock::now();
 
     Point start = map.getCoordinatesStart();
     Point goal = map.getCoordinatesGoal();
@@ -140,9 +140,8 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
         makePrimaryPath(searchedGoal);
         makeSecondaryPath();
     }
-    sresult.time =
-            (double)std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - time).count() /
-            1000;
+    auto endTime = std::chrono::high_resolution_clock::now();
+    sresult.time = (std::chrono::duration<double>(endTime - startTime)).count();
     sresult.hppath = &hppath;
     sresult.lppath = &lppath;
     return sresult;
