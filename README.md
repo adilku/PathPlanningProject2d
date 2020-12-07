@@ -1,6 +1,6 @@
 # PathPlanningProject
 
-## Параметры входного и выходного файла
+## Параметры входного файла
 
 Во входном файле нужно указать следующие параметры:
 
@@ -21,6 +21,17 @@
 
 
 ![qt_open](./Images/functions.png)
+
+
+## Содержание выходного файла
+
+* `numberofsteps` &mdash; число шагов алгоритма
+* `nodescreated` &mdash; число вершин, созданных за время поиска 
+* `length` &mdash;  длина пути в клетках
+* `path` &mdash; также указывается путь с помощью звездочек
+* `length_scaled` длина учитывая размер клетки
+* `time` &mdash; время работы алгоритма в секундах
+
 
 ## Сборка проекта
 Для работы над проектом требуется иметь аккаут GitHub.
@@ -154,6 +165,16 @@ PathPlanning.exe ../../Examples/example.xml
 Результат запуска:
 ![cmake_run2](./Images/cmake.png)
 
+
+## Менторы
+**Яковлев Константин Сергеевич**
+- kyakovlev@hse.ru
+- [Сайт НИУ ВШЭ](https://www.hse.ru/staff/yakovlev-ks)
+- Telegram: @KonstantinYakovlev
+  
+**Дергачев Степан**
+- sadergachev@edu.hse.ru
+- Telegram: @haiot4105
 
 
 ## Контакты
