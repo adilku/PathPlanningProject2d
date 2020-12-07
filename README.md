@@ -1,9 +1,26 @@
 # PathPlanningProject
-Шаблон исходного кода для выполнения проекта по планированию траекторий.
 
-![comics](./Images/comics.png)
+## Параметры входного и выходного файла
 
-## Требования
+Во входном файле нужно указать следующие параметры:
+
+* `width` и `height` &mdash; размеры карты
+* `startx` и `starty` &mdash; координаты начала
+* `finishx` и `finishy` &mdash; координаты конца
+* `grid` &mdash; сама карта
+
+
+Для смены параметров поиска пути нужно использовать следующие параметры входного файла:
+
+* `metrictype` &mdash; может быть euclidean, manhattan, chebyshev, diagonal
+* `hweight` &mdash; вес эвристики
+* `allowdiagonal` &mdash; разрешено ли ходить по диагонали {true|false}. Если false, то
+ходить можно только по горизонтали или вертикали
+* `cutcorners` &mdash; можно ли срезать углы
+* `allowsqueeze` &mdash; разрешено ли ходить по диагонали, если с обеих сторон препятствия
+
+
+## Сборка проекта
 Для работы над проектом требуется иметь аккаут GitHub.
 
 Для сборки и запуска возможно использовать QMake или CMake. CMakeLists.txt и .pro файлы доступны в репозитории. Для проведения тестирования локально испольщуйте CMake. Подробные требования к ПО указаны ниже. 
@@ -135,85 +152,10 @@ PathPlanning.exe ../../Examples/example.xml
 Результат запуска:
 ![cmake_run2](./Images/cmake.png)
 
-## Тестирование 
-Linux test result:
-
-[![Build Status](https://travis-ci.com/haiot4105/PathPlanningProject.svg?branch=master)](https://travis-ci.com/haiot4105/PathPlanningProject)
-
-Windows test result:
-
-[![Build status](https://ci.appveyor.com/api/projects/status/c5fnkkk68kenwf1v/branch/master?svg=true)](https://ci.appveyor.com/project/haiot4105/pathplanningproject/branch/master)
-
-При использовании сборки CMake возможен запуск тестов, как локально, так и с использованием Travis CI и AppVeyor. 
-Локальный запуск тестов производится из директории `.../PathPlanningProject/Build/{Debug|Release}/` с помощью команды:
-```
- ctest
-```
-
-либо (для более подробного вывода):
-```
- ctest --output-on-failure
-```
-При попытке запуска тестов c использованием пустого шаблона должен получиться следующий результат:
-```
-      Start  1: Test1
- 1/12 Test  #1: Test1 ............................***Failed    0.07 sec
-      Start  2: Test2
- 2/12 Test  #2: Test2 ............................***Failed    0.07 sec
-      Start  3: Test3
- 3/12 Test  #3: Test3 ............................***Failed    0.06 sec
-      Start  4: Test4
- 4/12 Test  #4: Test4 ............................***Failed    0.07 sec
-      Start  5: Test5
- 5/12 Test  #5: Test5 ............................***Failed    0.07 sec
-      Start  6: Test6
- 6/12 Test  #6: Test6 ............................***Failed    0.06 sec
-      Start  7: Test7
- 7/12 Test  #7: Test7 ............................***Failed    0.06 sec
-      Start  8: Test8
- 8/12 Test  #8: Test8 ............................***Failed    0.06 sec
-      Start  9: Test9
- 9/12 Test  #9: Test9 ............................***Failed    0.06 sec
-      Start 10: Test10
-10/12 Test #10: Test10 ...........................***Failed    0.07 sec
-      Start 11: Test11
-11/12 Test #11: Test11 ...........................***Failed    0.06 sec
-      Start 12: Test12
-12/12 Test #12: Test12 ...........................***Failed    0.06 sec
-
-0% tests passed, 12 tests failed out of 12
-
-Total Test time (real) =   0.80 sec
-
-The following tests FAILED:
-	  1 - Test1 (Failed)
-	  2 - Test2 (Failed)
-	  3 - Test3 (Failed)
-	  4 - Test4 (Failed)
-	  5 - Test5 (Failed)
-	  6 - Test6 (Failed)
-	  7 - Test7 (Failed)
-	  8 - Test8 (Failed)
-	  9 - Test9 (Failed)
-	 10 - Test10 (Failed)
-	 11 - Test11 (Failed)
-	 12 - Test12 (Failed)
-Errors while running CTest
-```
-Для удаленного автотестирования и получения "плашки" о его проведении следует подключить сервисы TravisCI и AppVeyor к вашему репозиторию. Файлы `.travis.yml` и `.appveyor.yml` доступны в репозитории. После активации сервисов тестирование будет проводиться после каждого коммита в репозиторий GitHub. Подробная информация о тестировании будет доступна в личном кабинете соответствующего сервиса. [Подробнее об удаленном тестировании](https://habr.com/ru/post/329264/).
-
-
-## Требования к поддержке репозитория проекта
-Поддерживайте файлы CMakeLists.txt в актуальном состоянии даже при использовании QtCreator. Переименуйте название проекта согласно шаблону `YourFirstName_YourLastName_ASearch`. Для переименования используйте переменную `PROJECT_NAME`, значение которой устанавливается в файле CMakeLists.txt верхнего уровня. Поддерживайте структуру проекта согласно этому шаблону. Это необходимо для упрощение процесса тестирования и оценивания вашего проекта. Помимо этого рекомендуется настроить удаленное автотестирования для быстрой базовой проверки. 
-
 
 
 ## Контакты
-**Яковлев Константин Сергеевич**
-- kyakovlev@hse.ru
-- [Сайт НИУ ВШЭ](https://www.hse.ru/staff/yakovlev-ks)
-- Telegram: @KonstantinYakovlev
+**Кусиденов Адильхан Маратович**
+- akusidenov@edu.hse.ru
+- Telegram: @kussyadil
   
-**Дергачев Степан**
-- sadergachev@edu.hse.ru
-- Telegram: @haiot4105
