@@ -11,7 +11,8 @@ public:
     bool    allowsqueeze;   //Option that allows to move throught "bottleneck"
     bool    allowdiagonal;  //Option that allows to make diagonal moves
     bool    cutcorners;     //Option that allows to make diagonal moves, when one adjacent cell is untraversable
-
+    double  hweight;
+    int breakingties;
 };
 
 #endif // ENVIRONMENTOPTIONS_H

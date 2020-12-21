@@ -12,6 +12,7 @@
 #include <set>
 #include <unordered_set>
 #include <map>
+#include <tuple>
 
 class Search
 {
@@ -38,17 +39,25 @@ class Search
         struct compare {
             bool operator()(const Node &lhs,
                             const Node &rhs) const {
-                return lhs.F < rhs.F;
+                return std::tuple(lhs.F, lhs.g, lhs.i, lhs.j) < std::tuple(rhs.F, rhs.g, rhs.i, rhs.j);
             }
         };
 
+        struct hash_pair {
+            template <class T1, class T2>
+            size_t operator()(const std::pair<T1, T2>& p) const
+            {
+                auto hash1 = std::hash<T1>{}(p.first);
+                auto hash2 = std::hash<T2>{}(p.second);
+                return hash1 ^ hash2;
+            }
+        };
 
         SearchResult                    sresult; //This will store the search result
         std::list<Node>                 lppath, hppath; //
-        std::list<Node> open;
-        std ::multimap<std::pair<int, int>, std::multiset<Node>::iterator> open_map;
-        std::multiset<Node, compare> open_heap;
-        std::vector<std::vector<Node>> close;
+        std ::multimap<std::pair<int, int>, std::set<Node>::iterator> open_map;
+        std::set<Node, compare> open_heap;
+        std::unordered_map<std::pair<int, int>, Node, hash_pair> close_map;
         //CODE HERE to define other members of the class
         double get_heuristic(Point from, Point to, const EnvironmentOptions &options) const;
 

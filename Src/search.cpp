@@ -26,13 +26,14 @@ double Search::get_heuristic(Point from, Point to, const EnvironmentOptions &opt
 
 std::vector<Node> Search::CheckNeighbours(Node &v, const Map &map, const EnvironmentOptions &options) {
     std::vector<Node> neighbours;
+    double hWeight = options.hweight;
     for (auto &micro_node : DISALLOWED_DIAG_MOVES) {
         int i = micro_node.first;
         int j = micro_node.second;
         if (map.CellOnGrid(v.i + i, v.j + j) && map.CellIsTraversable(v.i + i, v.j + j)) {
             neighbours.emplace_back(v.i + i, v.j + j,
                                     v.g + CN_CELL_SIZE +
-                                    1 * get_heuristic({v.i + i, v.j + j}, map.getCoordinatesGoal(), options),
+                                    hWeight * get_heuristic({v.i + i, v.j + j}, map.getCoordinatesGoal(), options),
                                     v.g + CN_CELL_SIZE,
                                     get_heuristic({v.i + i, v.j + j}, map.getCoordinatesGoal(), options), &v);
         }
@@ -52,7 +53,7 @@ std::vector<Node> Search::CheckNeighbours(Node &v, const Map &map, const Environ
                             ) {
                         neighbours.emplace_back(v.i + i, v.j + j,
                                                 v.g + CN_SQRT_TWO +
-                                                1 *
+                                                hWeight *
                                                 get_heuristic({v.i + i, v.j + j}, map.getCoordinatesGoal(),
                                                               options),
                                                 v.g + CN_SQRT_TWO,
@@ -68,16 +69,6 @@ std::vector<Node> Search::CheckNeighbours(Node &v, const Map &map, const Environ
 
 
 SearchResult Search::startSearch(ILogger *Logger, const Map &map, const EnvironmentOptions &options) {
-
-    //need to implement
-
-    //Node temp;
-    /*sresult.pathfound = ;
-    sresult.nodescreated =  ;
-    sresult.numberofsteps = ;
-    sresult.time = ;
-    sresult.hppath = &hppath; //Here is a constant pointer
-    sresult.lppath = &lppath;*/
     auto startTime = std::chrono::high_resolution_clock::now();
 
     Point start = map.getCoordinatesStart();
@@ -87,43 +78,38 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
 
     Node *searchedGoal = nullptr;
 
-    close.resize(height, std::vector<Node>(width));
-
     int cnt_steps = 0;
 
-    open.emplace_back(start.i, start.j, 1 * get_heuristic(start, goal, options), 0, get_heuristic(start, goal, options),
-                      nullptr
-    );
 
     auto temp = open_heap.insert(
             Node(start.i, start.j, 1 * get_heuristic(start, goal, options), 0, get_heuristic(start, goal, options),
                  nullptr
             ));
 
-    while (!open.empty()) {
+    while (!open_heap.empty()) {
         ++cnt_steps;
         auto cur_el = *open_heap.begin();
         open_heap.erase(open_heap.begin());
         open_map.erase({cur_el.i, cur_el.j});
-        close[cur_el.i][cur_el.j] = cur_el;
+        close_map[{cur_el.i, cur_el.j}] = cur_el;
         int cur_I = cur_el.i;
         int cur_J = cur_el.j;
-        auto cur_v = &close[cur_I][cur_J];
+        auto cur_v = &close_map[{cur_I, cur_J}];
         if (cur_v->i == goal.i && cur_v->j == goal.j) {
-            searchedGoal = &close[cur_v->i][cur_v->j];
+            searchedGoal = &close_map[{cur_v->i, cur_v->j}];
             break;
         }
         for (auto &neighbour : CheckNeighbours(*cur_v, map, options)) {
-            if (close[neighbour.i][neighbour.j].i == -1) {
+            if (close_map[{neighbour.i, neighbour.j}].i == -1) {
                 auto it = open_map.find({neighbour.i, neighbour.j});
                 if (it != open_map.end() && it->second->g > neighbour.g) {
                     open_heap.erase(it->second);
                     auto new_val = open_heap.insert(neighbour);
                     open_map.erase(it);
-                    open_map.insert({{neighbour.i, neighbour.j}, new_val});
+                    open_map.insert({{neighbour.i, neighbour.j}, new_val.first});
                 } else if (it == open_map.end()) {
                     auto temp1 = open_heap.insert(neighbour);
-                    open_map.insert({{neighbour.i, neighbour.j}, temp1});
+                    open_map.insert({{neighbour.i, neighbour.j}, temp1.first});
                 }
             }
         }
@@ -134,7 +120,7 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
     } else {
         sresult.pathlength = 0;
     }
-    sresult.nodescreated = open.size() + cnt_steps;
+    sresult.nodescreated = open_heap.size() + cnt_steps;
     sresult.numberofsteps = cnt_steps;
     if (sresult.pathfound) {
         makePrimaryPath(searchedGoal);

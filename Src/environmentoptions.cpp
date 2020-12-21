@@ -6,6 +6,8 @@ EnvironmentOptions::EnvironmentOptions()
     allowsqueeze = false;
     allowdiagonal = true;
     cutcorners = false;
+    hweight = 1;
+    breakingties = 1;
 }
 
 EnvironmentOptions::EnvironmentOptions(bool AS, bool AD, bool CC, int MT)
