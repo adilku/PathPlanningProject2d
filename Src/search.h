@@ -55,7 +55,7 @@ class Search
 
         SearchResult                    sresult; //This will store the search result
         std::list<Node>                 lppath, hppath; //
-        std ::multimap<std::pair<int, int>, std::set<Node>::iterator> open_map;
+        std ::unordered_map<std::pair<int, int>, std::set<Node>::iterator, hash_pair> open_map;
         std::set<Node, compare> open_heap;
         std::unordered_map<std::pair<int, int>, Node, hash_pair> close_map;
         //CODE HERE to define other members of the class
