@@ -14,9 +14,9 @@ double Search::get_heuristic(Point from, Point to, const EnvironmentOptions &opt
         return CN_CELL_SIZE * abs(abs(to.i - from.i) - abs(to.j - from.j)) +
                CN_SQRT_TWO * std::min(abs(to.i - from.i), abs(to.j - from.j));
     } else if (options.metrictype == CN_SP_MT_MANH) {
-        return CN_CELL_SIZE * (abs(from.i - to.i) + abs(from.i - to.i));
+        return CN_CELL_SIZE * (abs(from.i - to.i) + abs(from.j - to.j));
     } else if (options.metrictype == CN_SP_MT_EUCL) {
-        return CN_CELL_SIZE * sqrt((to.i - from.i) * (to.i - from.i) + (to.j - from.j));
+        return CN_CELL_SIZE * sqrt((to.i - from.i) * (to.i - from.i) + (to.j - from.j) * (to.j - from.j));
     } else if (options.metrictype == CN_SP_MT_CHEB) {
         return std::max(abs(from.i - to.i), abs(from.j - to.j));
     }
@@ -73,8 +73,6 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
 
     Point start = map.getCoordinatesStart();
     Point goal = map.getCoordinatesGoal();
-    int width = map.getMapWidth();
-    int height = map.getMapHeight();
 
     Node *searchedGoal = nullptr;
 
