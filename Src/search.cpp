@@ -24,8 +24,7 @@ double Search::get_heuristic(Point from, Point to, const EnvironmentOptions &opt
 }
 
 
-std::vector<Node> Search::CheckNeighbours(Node &v, const Map &map, const EnvironmentOptions &options) {
-    std::vector<Node> neighbours;
+void Search::CheckNeighbours(Node &v, const Map &map, const EnvironmentOptions &options, std::vector<Node> &neighbours) {
     double hWeight = options.hweight;
     for (auto &micro_node : DISALLOWED_DIAG_MOVES) {
         int i = micro_node.first;
@@ -64,7 +63,6 @@ std::vector<Node> Search::CheckNeighbours(Node &v, const Map &map, const Environ
             }
         }
     }
-    return neighbours;
 }
 
 
@@ -97,7 +95,9 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
             searchedGoal = &close_map[{cur_v->i, cur_v->j}];
             break;
         }
-        for (auto &neighbour : CheckNeighbours(*cur_v, map, options)) {
+        std::vector<Node> neighbours;
+        CheckNeighbours(*cur_v, map, options, neighbours);
+        for (auto &neighbour : neighbours) {
             if (close_map[{neighbour.i, neighbour.j}].i == -1) {
                 auto it = open_map.find({neighbour.i, neighbour.j});
                 if (it != open_map.end() && it->second->g > neighbour.g) {

@@ -62,7 +62,7 @@ class Search
         double get_heuristic(Point from, Point to, const EnvironmentOptions &options) const;
 
 
-    std::vector<Node> CheckNeighbours(Node &v, const Map &map, const EnvironmentOptions &options);
+    void CheckNeighbours(Node &v, const Map &map, const EnvironmentOptions &options, std::vector<Node> &neighbours);
 
     void makePrimaryPath(Node* curNode);
 
