@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Adilkhan_Kussidenov_ASearch"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Src\;CMake Files\Tests\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Adilkhan_Kussidenov_ASearch">
+				<Option output="D:/Documents/PathPlanningProject2d/Bin/Debug/Adilkhan_Kussidenov_ASearch.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documents/PathPlanningProject2d/bin/Debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 Adilkhan_Kussidenov_ASearch"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Adilkhan_Kussidenov_ASearch/fast">
+				<Option output="D:/Documents/PathPlanningProject2d/Bin/Debug/Adilkhan_Kussidenov_ASearch.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documents/PathPlanningProject2d/bin/Debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 Adilkhan_Kussidenov_ASearch/fast"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PPLIB">
+				<Option output="D:/Documents/PathPlanningProject2d/Build/Debug/Src/libPPLIB.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug/Src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 PPLIB"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PPLIB/fast">
+				<Option output="D:/Documents/PathPlanningProject2d/Build/Debug/Src/libPPLIB.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug/Src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 PPLIB/fast"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testbench">
+				<Option output="D:/Documents/PathPlanningProject2d/Build/Debug/Tests/testbench.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug/Tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documents/PathPlanningProject2d/Tests/../Src"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Tests/Makefile&quot;  VERBOSE=1 testbench"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testbench/fast">
+				<Option output="D:/Documents/PathPlanningProject2d/Build/Debug/Tests/testbench.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documents/PathPlanningProject2d/Build/Debug/Tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documents/PathPlanningProject2d/Tests/../Src"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Documents/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Tests/Makefile&quot;  VERBOSE=1 testbench/fast"/>
+					<CompileFile command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Documents/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/Documents/PathPlanningProject2d/Build/Debug/Tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/Heap.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/config.cpp">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/config.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/environmentoptions.cpp">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/environmentoptions.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/gl_const.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/ilogger.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/main.cpp">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/map.cpp">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/map.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/mission.cpp">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/mission.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/node.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/open_container.cpp">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/open_container.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/search.cpp">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/search.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/searchresult.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/tinyxml2.cpp">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/tinyxml2.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/xmllogger.cpp">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/xmllogger.h">
+			<Option target="Adilkhan_Kussidenov_ASearch"/>
+			<Option target="PPLIB"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Tests/testbench.cpp">
+			<Option target="testbench"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Src\"/>
+		</Unit>
+		<Unit filename="D:/Documents/PathPlanningProject2d/Tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Tests\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

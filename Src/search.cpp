@@ -1,5 +1,7 @@
 #include "search.h"
+#include <tuple>
 #include <chrono>
+#include "open_container.h"
 
 
 Search::Search() {
@@ -24,7 +26,8 @@ double Search::get_heuristic(Point from, Point to, const EnvironmentOptions &opt
 }
 
 
-void Search::CheckNeighbours(Node &v, const Map &map, const EnvironmentOptions &options, std::vector<Node> &neighbours) {
+void
+Search::checkNeighbours(Node &v, const Map &map, const EnvironmentOptions &options, std::vector<Node> &neighbours) {
     double hWeight = options.hweight;
     for (auto &micro_node : DISALLOWED_DIAG_MOVES) {
         int i = micro_node.first;
@@ -67,6 +70,9 @@ void Search::CheckNeighbours(Node &v, const Map &map, const EnvironmentOptions &
 
 
 SearchResult Search::startSearch(ILogger *Logger, const Map &map, const EnvironmentOptions &options) {
+
+    open_container open(options.breakingties);
+
     auto startTime = std::chrono::high_resolution_clock::now();
 
     Point start = map.getCoordinatesStart();
@@ -76,17 +82,14 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
 
     int cnt_steps = 0;
 
-
-    auto temp = open_heap.insert(
+    open.insert(
             Node(start.i, start.j, 1 * get_heuristic(start, goal, options), 0, get_heuristic(start, goal, options),
                  nullptr
             ));
 
-    while (!open_heap.empty()) {
+    while (!open.open_heap.empty()) {
         ++cnt_steps;
-        auto cur_el = *open_heap.begin();
-        open_heap.erase(open_heap.begin());
-        open_map.erase({cur_el.i, cur_el.j});
+        auto cur_el = open.get_min();
         close_map[{cur_el.i, cur_el.j}] = cur_el;
         int cur_I = cur_el.i;
         int cur_J = cur_el.j;
@@ -96,19 +99,10 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
             break;
         }
         std::vector<Node> neighbours;
-        CheckNeighbours(*cur_v, map, options, neighbours);
+        checkNeighbours(*cur_v, map, options, neighbours);
         for (auto &neighbour : neighbours) {
             if (close_map[{neighbour.i, neighbour.j}].i == -1) {
-                auto it = open_map.find({neighbour.i, neighbour.j});
-                if (it != open_map.end() && it->second->g > neighbour.g) {
-                    open_heap.erase(it->second);
-                    auto new_val = open_heap.insert(neighbour);
-                    open_map.erase(it);
-                    open_map.insert({{neighbour.i, neighbour.j}, new_val.first});
-                } else if (it == open_map.end()) {
-                    auto temp1 = open_heap.insert(neighbour);
-                    open_map.insert({{neighbour.i, neighbour.j}, temp1.first});
-                }
+                open.change_if(neighbour);
             }
         }
     }
@@ -118,7 +112,7 @@ SearchResult Search::startSearch(ILogger *Logger, const Map &map, const Environm
     } else {
         sresult.pathlength = 0;
     }
-    sresult.nodescreated = open_heap.size() + cnt_steps;
+    sresult.nodescreated = open.open_heap.size() + cnt_steps;
     sresult.numberofsteps = cnt_steps;
     if (sresult.pathfound) {
         makePrimaryPath(searchedGoal);

@@ -1,5 +1,6 @@
 #ifndef MAP_H
-#define	MAP_H
+#define MAP_H
+
 #include <iostream>
 #include "gl_const.h"
 #include <sstream>
@@ -28,7 +29,6 @@ public:
 };
 
 
-
 class Map {
 private:
     int height, width;
@@ -37,19 +37,28 @@ private:
     double cellSize;
     int **Grid;
 
-    public:
-        Map();
-        Map(const Map& orig);
-        ~Map();
+public:
+    Map();
 
-        bool getMap(const char *FileName);
-        bool CellIsTraversable (int i, int j) const;
-        bool CellOnGrid (int i, int j) const;
-        bool CellIsObstacle(int i, int j) const;
-        int  getValue(int i, int j) const;
-        int getMapHeight() const;
-        int getMapWidth() const;
-        double getCellSize() const;
+    Map(const Map &orig);
+
+    ~Map();
+
+    bool getMap(const char *FileName);
+
+    bool CellIsTraversable(int i, int j) const;
+
+    bool CellOnGrid(int i, int j) const;
+
+    bool CellIsObstacle(int i, int j) const;
+
+    int getValue(int i, int j) const;
+
+    int getMapHeight() const;
+
+    int getMapWidth() const;
+
+    double getCellSize() const;
 
     Point getCoordinatesStart() const;
 
